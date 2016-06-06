@@ -1,5 +1,6 @@
 <h1><%= @chat.users.map {|user| user.username}.join(", ") %></h1>
 <div>
+<%= binding.pry %>
 <div class="panel panel-default">
   <% if @chat.messages.any? %>
     <div class="panel-body" id="messages">
