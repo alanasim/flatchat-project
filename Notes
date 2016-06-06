@@ -1,0 +1,7 @@
+#CHATROOM INDEX
+the chatroom index should list the user's chatrooms
+
+the chatroom should not list chatrooms to which the user does not belong
+
+clicking on the chatroom should go to that specific chatroom
+
