@@ -12,9 +12,13 @@ jacob = User.create(username: "jacob", password: "password")
 steven = User.create(username: "steven", password: "password")
 
 # CHATROOMS
-chatroom1 = User.create(username: "alana", password: "password")
-chatroom2 = User.create(username: "jacob", password: "password")
-chatroom3 = User.create(username: "steven", password: "password")
+chatroom1 = Chatroom.create
+chatroom2 = Chatroom.create
+chatroom3 = Chatroom.create
 
-
-
+alana.chatrooms << chatroom1
+alana.chatrooms << chatroom2
+jacob.chatrooms << chatroom2
+jacob.chatrooms << chatroom3
+steven.chatrooms << chatroom1
+steven.chatrooms << chatroom3
