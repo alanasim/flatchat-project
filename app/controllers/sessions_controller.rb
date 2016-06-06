@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:user][:username])
     if User.authenticate(params[:user][:username], params[:user][:password])
       session[:user_id] = user.id
-      redirect_to chatrooms_path
+      redirect_to chats_path
     else
       flash[:error] = "Invalid Username or Password"
       redirect_to login_path
