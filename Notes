@@ -1,0 +1,26 @@
+#CHATS INDEX
+the chatroom index should list the user's chatrooms
+
+the chatroom index should not list chatrooms to which the user does not belong
+
+clicking on the chatroom should go to that specific chatroom
+
+#CHATS NEW
+User should be able to create new chat by typing valid username
+
+User should be able to create new group chat by typing valid usernames
+
+User should be able to create new chat by typing valid phone number
+
+User should be able to create new group chat by typing valid phone numbers
+
+User should be able to create new group chat by typing valid phone number and username
+
+User should receive 'no user found error' if no valid username found
+
+User should receive 'no user found error' if no valid phone number found
+
+
+#CHATROOM SHOW
+fadslfsajldfas
+

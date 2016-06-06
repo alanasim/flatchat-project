@@ -1,3 +1,1 @@
-<% @chat.messages.each do |message| %>
-<li><%= message.content %></li>
-<% end %>
+<li><b><%= message.user == current_user ? "you" : message.user.username %>: </b><%= message.content %></li>
