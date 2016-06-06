@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :user_chatrooms
-  has_many :chatrooms, through: :user_chatrooms
+  has_many :user_chats
+  has_many :chatrooms, through: :user_chats
   has_many :messages
 
   has_secure_password

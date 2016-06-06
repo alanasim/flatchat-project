@@ -12,13 +12,13 @@ jacob = User.create(username: "jacob", password: "password")
 steven = User.create(username: "steven", password: "password")
 
 # CHATROOMS
-chatroom1 = Chatroom.create
-chatroom2 = Chatroom.create
-chatroom3 = Chatroom.create
+chat1 = Chat.create
+chat2 = Chat.create
+chat3 = Chat.create
 
-alana.chatrooms << chatroom1
-alana.chatrooms << chatroom2
-jacob.chatrooms << chatroom2
-jacob.chatrooms << chatroom3
-steven.chatrooms << chatroom1
-steven.chatrooms << chatroom3
+alana.chat << chat1
+alana.chat << chat2
+jacob.chat << chat2
+jacob.chat << chat3
+steven.chat << chat1
+steven.chat << chat3
