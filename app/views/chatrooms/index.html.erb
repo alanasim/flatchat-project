@@ -1,0 +1,8 @@
+<h1>Chatrooms page</h1>
+<h2>Hello <%= current_user.username %></h2>
+<% Chatroom.all.each do |chatroom| %>
+<%= link_to chatroom.name, chatroom_path(chatroom)  %> <br>
+<% end %>
+<br> <br>
+
+<%= link_to "Log out", logout_path, method: "destroy" %>
