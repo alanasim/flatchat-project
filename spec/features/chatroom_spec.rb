@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-RSpec.describe "Chatroom" do
-  let :user {User.create(username: "TestMan", password: "password")}
+RSpec.describe "Chat" do
+  let(:user) {User.create(username: "TestMan", password: "password")}
   
-  describe "Chatroom index" do
+  describe "Chat index" do
     before(:each) do
       sign_in
     end
-    it "lists the user's chatrooms" do
+    it "lists the user's chats" do
       visit "/"
-      expect(page).to have_content("Chatrooms page")
+      expect(page).to have_content("Chats page")
     end
   end
 end
