@@ -1,7 +1,11 @@
 <h1>Chatrooms page</h1>
 <h2>Hello <%= current_user.username %></h2>
-<% Chatroom.all.each do |chatroom| %>
-<%= link_to chatroom.name, chatroom_path(chatroom)  %> <br>
+<% current_user.chatrooms.each do |chatroom| %>
+<%= link_to chatroom_path(chatroom)  do %>
+  <%= chatroom.users.where.not(username: current_user.username).map {|user| user.username}.join(", ") %>
+
+<% end %>
+<br>
 <% end %>
 <br> <br>
 
