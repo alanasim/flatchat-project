@@ -31,6 +31,9 @@ gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'rails_12factor', group: :production
+
 group :test do
   gem 'rspec-rails'
   gem "capybara"
