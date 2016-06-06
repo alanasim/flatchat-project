@@ -32,7 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :test do
   gem 'rspec-rails'
-  gem "capybara-webkit"
+  gem "capybara"
+  # gem "capybara-webkit"
 end
 
 group :development, :test do
