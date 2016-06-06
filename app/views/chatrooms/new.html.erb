@@ -1,0 +1,11 @@
+<h2>Initiate Chat</h2>
+
+<%= form_tag('/chatrooms/create', method: 'post') do %>
+  <div id="user-fields">
+  <%= label_tag :user %>
+  <%= text_field_tag :user %>
+
+  <%= link_to "+", '#', remote: true, id: 'add-user' %> <br>
+  </div>
+  <%= submit_tag "Initiate Chat" %>
+<% end %>

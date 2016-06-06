@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:create]
 
-  resources :chatrooms, only: [:index, :show]
+  resources :chatrooms, only: [:index, :show, :new, :create]
 
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
