@@ -1,9 +1,9 @@
-<h1><%= @chatroom.users.map {|user| user.username}.join(", ") %></h1>
+<h1><%= @chat.users.map {|user| user.username}.join(", ") %></h1>
 <div>
 <div class="panel panel-default">
-  <% if @chatroom.messages.any? %>
+  <% if @chat.messages.any? %>
     <div class="panel-body" id="messages">
-      <%= render partial: 'messages/message', collection: @chatroom.messages%>
+      <%= render partial: 'messages/message', collection: @chat.messages%>
     </div>
   <%else%>
     <div class="panel-body hidden" id="messages">
@@ -11,5 +11,5 @@
   <%end%>
 </div>
 
-  <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom}%>
+  <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
 </div>
