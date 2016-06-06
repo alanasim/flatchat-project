@@ -1,0 +1,20 @@
+<h2>Initiate Chat</h2>
+
+<%= form_for @chat do |f| %>
+    <%= f.fields_for :users do |u| %>
+  <div id="user-fields">
+      <%= link_to "add field", '#', remote: true, id: 'add-user' %>
+      <div class="row">
+        <select onchange="myFunction(0)" id="select-0">
+          <option value="username">Username</option>
+          <option value="phone_number">Phone Number</option>
+        </select>
+        <div class="input">
+          <%= u.label :username %>
+          <%= u.text_field :username %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= f.submit "Initiate Chat" %>
+<% end %>
