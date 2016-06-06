@@ -30,7 +30,8 @@ RSpec.configure do |config|
 end
 
 def sign_in
-  visit '/'
-  fill_in
-  click_link('log in')
+  visit '/login'
+  fill_in('user_username', :with => 'TestMan')
+  fill_in('user_password', :with => 'password')
+  click_on('Login')
 end
