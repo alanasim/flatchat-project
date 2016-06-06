@@ -16,9 +16,9 @@ chat1 = Chat.create
 chat2 = Chat.create
 chat3 = Chat.create
 
-alana.chat << chat1
-alana.chat << chat2
-jacob.chat << chat2
-jacob.chat << chat3
-steven.chat << chat1
-steven.chat << chat3
+alana.chats << chat1
+alana.chats << chat2
+jacob.chats << chat2
+jacob.chats << chat3
+steven.chats << chat1
+steven.chats << chat3
