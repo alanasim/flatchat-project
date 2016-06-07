@@ -2,7 +2,7 @@
   $('#verify-pin').hide()
   $('#status-box').removeClass()
   $('#status-box').addClass('alert alert-success')
-  $('#status-message').text('Success!!')
+  $('#status-message').html('Success!!<br><a href="/chats" class="btn btn-primary">Go to Chats</a>')
 <% else %>
   $('#status-box').removeClass()
   $('#status-box').addClass('alert alert-warning')

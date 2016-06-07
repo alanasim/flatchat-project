@@ -9,8 +9,8 @@ class PhoneNumbersController < ApplicationController
     @phone_number.generate_pin
     @phone_number.send_pin
     respond_to do |format|
-    format.js # render app/views/phone_numbers/create.js.erb
-  end
+      format.js # render app/views/phone_numbers/create.js.erb
+    end
   end
 
   def verify
