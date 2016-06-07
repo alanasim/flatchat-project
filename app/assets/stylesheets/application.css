@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require materialize.min
  */
 
 div.input {

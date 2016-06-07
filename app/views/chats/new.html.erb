@@ -1,4 +1,4 @@
-<h2>Initiate Chat</h2>
+<h2>Start Chat</h2>
 
 <%= form_for @chat do |f| %>
     <%= f.fields_for :users do |u| %>
@@ -16,5 +16,5 @@
       </div>
     <% end %>
   </div>
-  <%= f.submit "Initiate Chat" %>
+  <%= f.submit "Initiate Chat", class: 'class="waves-effect waves-light btn"' %>
 <% end %>

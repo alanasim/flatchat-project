@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require materialize.min
 //= require_tree .
 //= require_tree ./channels
