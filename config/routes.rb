@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources :phone_numbers, only: [:new, :create]
+  post 'phone_numbers/verify' => 'phone_numbers#verify'
+
   mount ActionCable.server => '/cable'
 
   resources :messages, only: [:create]
