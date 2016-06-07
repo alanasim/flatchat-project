@@ -37,6 +37,7 @@ Rails.application.configure do
   # Action Cable endpoint configuration
   config.web_socket_server_url = "wss://flatchatter.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://flatchatter.herokuapp.com', 'http://flatchatter.herokuapp.com']
+  
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
