@@ -27,9 +27,25 @@ class ChatsController < ApplicationController
     redirect_to chat_path(@chat)
   end
 
+  def validate_username
+    @id = validate_params[:id]
+    if User.find_by(username: validate_params[:value])
+      @validation = true
+    else
+      @validation = false
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
   def chat_params
     params.require(:chat).permit(users_attributes: [:username, :phone_number])
+  end
+
+  def validate_params
+    params.permit(:value, :id)
   end
 
   def chat_member?

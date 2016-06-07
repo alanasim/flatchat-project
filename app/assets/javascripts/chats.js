@@ -20,11 +20,12 @@ $(document).ready(function() {
             <option value="phone_number">Phone Number</option>\
           </select>\
           <div class="input">\
-          <label for="chat_users_attributes_' + counter + '_username">Username</label>\
-          <input type="text" name="chat[users_attributes][' + counter + '][username]" id="chat_users_attributes_' + counter + '_username" />\
+            <label for="chat_users_attributes_' + counter + '_username">Username</label>\
+            <input type="text" name="chat[users_attributes][' + counter + '][username]" id="chat_users_attributes_' + counter + '_username" />\
+            <div id="validation" style="display:inline">\
+            </div>\
           </div>\
         </div>');
     counter += 1
-})
-
+  })
 })

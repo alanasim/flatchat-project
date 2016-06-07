@@ -12,9 +12,31 @@
         <div class="input">
           <%= u.label :username %>
           <%= u.text_field :username %>
+          <div id="validation" style="display:inline">
+          </div>
         </div>
       </div>
     <% end %>
   </div>
   <%= f.submit "Initiate Chat" %>
 <% end %>
+
+<script>
+  $(document).ready(function() {
+    var currentField
+    $('input').focus(function() {
+      currentField = $(':focus')
+      var prevField = ''
+    })
+    $('input').blur(function() {
+      prevField = currentField
+    })
+    $('[id*='+'username'+']').blur(function() {
+      $.ajax ({
+        url: '/chats/validate_username',
+        method: 'post',
+        data: {value: prevField.val(), id: prevField.attr('id')}
+      })
+  })
+  })
+</script>
