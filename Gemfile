@@ -31,8 +31,8 @@ gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 gem 'rails_12factor', group: :production
+gem 'twilio-ruby', '~> 4.1.0'
 
 group :test do
   gem 'rspec-rails'
