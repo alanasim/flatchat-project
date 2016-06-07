@@ -1,15 +1,19 @@
-<h1>Your Chats</h1>
-<h2>Hey <%= current_user.username %></h2>
-<div>
-<%= link_to "Start a chat", new_chat_path, class: 'btn btn-primary' %>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h1>Your Chats</h1>
+    <h2>Hey <%= current_user.username %></h2>
+    <div>
+    <%= link_to "Start a chat", new_chat_path, class: 'btn btn-primary' %>
+    </div>
+    <% current_user.chats.each do |chat| %>
+    <%= link_to chat_path(chat)  do %>
+      <%= chat.users.where.not(username: current_user.username).map {|user| user.username}.join(", ") %>
+
+    <% end %>
+    <br>
+    <% end %>
+    <br> <br>
+
+    <%= link_to "Log out", logout_path, method: "destroy" %>
+  </div>
 </div>
-<% current_user.chats.each do |chat| %>
-<%= link_to chat_path(chat)  do %>
-  <%= chat.users.where.not(username: current_user.username).map {|user| user.username}.join(", ") %>
-
-<% end %>
-<br>
-<% end %>
-<br> <br>
-
-<%= link_to "Log out", logout_path, method: "destroy" %>

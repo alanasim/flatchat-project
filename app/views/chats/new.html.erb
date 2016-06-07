@@ -1,20 +1,31 @@
-<h2>Start Chat</h2>
-
-<%= form_for @chat do |f| %>
-    <%= f.fields_for :users do |u| %>
-  <div id="user-fields">
-      <%= link_to "add field", '#', remote: true, id: 'add-user' %>
-      <div class="row">
-        <select onchange="myFunction(0)" id="select-0">
-          <option value="username">Username</option>
-          <option value="phone_number">Phone Number</option>
-        </select>
-        <div class="input">
-          <%= u.label :username %>
-          <%= u.text_field :username %>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h2>Start Chat</h2>
+    <%= form_for @chat do |f| %>
+        <%= f.fields_for :users do |u| %>
+      <div id="user-fields">
+          <%= link_to "add field", '#', remote: true, id: 'add-user' %>
+          <div class="row">
+            <div class="input-field col s12">
+              <select>
+                <option value="username">Username</option>
+                <option value="phone_number">Phone Number</option>
+              </select>
+              <label>Select Type</label>
+            </div>
+          </div>
+          
+          <div class="row">
+          <div class="input-field col s12">
+            <%= u.text_field :username %>
+            <%= u.label :username %>
+          </div>
         </div>
+
+          
       </div>
+        <% end %>
+      <%= f.submit "Initiate Chat", class: 'waves-effect waves-light btn' %>
     <% end %>
   </div>
-  <%= f.submit "Initiate Chat", class: 'class="waves-effect waves-light btn"' %>
-<% end %>
+</div>
