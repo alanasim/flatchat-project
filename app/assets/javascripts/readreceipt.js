@@ -7,17 +7,17 @@ $(document).on('ready', function(){
     hideMessage(this);
   })
 
-  // mark as seen after message submit
-  $('form#new_message').on('submit', function(){
-    // add in mark as seen and hidemessage logic
-    setTimeout(function() {
-       $('[data-seen=false]').filter(shouldBeMarkedAsSeen).each(function(){
-          markAsSeen(this);
-          hideMessage(this);
-      })
-    }, 1000);
+  // // mark as seen after message submit
+  // $('form#new_message').on('submit', function(){
+  //   // add in mark as seen and hidemessage logic
+  //   setTimeout(function() {
+  //      $('[data-seen=false]').filter(shouldBeMarkedAsSeen).each(function(){
+  //         markAsSeen(this);
+  //         hideMessage(this);
+  //     })
+  //   }, 1000);
 
-  })
+  // })
 
 
   // mark as seen after page focus -- WORKING
@@ -29,11 +29,11 @@ $(document).on('ready', function(){
       }
     )
 
-    // $('div#messages').on('change', function(){
-    // // add in mark as seen and hidemessage logic
-    //   markAsSeen(this);
-    //   hideMessage(this);
-    // })
+    $('div#messages').on('change', function(){
+    // add in mark as seen and hidemessage logic
+      markAsSeen(this);
+      hideMessage(this);
+    })
 
   })
 
