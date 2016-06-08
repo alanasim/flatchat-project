@@ -1,8 +1,8 @@
 <h1>Chats page</h1>
 <h2>Hello <%= current_user.username %></h2>
 <div>
-    <%= link_to "Start a chat", new_chat_path, class: 'btn btn-primary' %>
-    </div>
+  <%= link_to "Start a chat", new_chat_path, class: 'btn btn-primary' %>
+</div>
 <% current_user.chats.each do |chat| %>
 <%= link_to chat_path(chat)  do %>
   <%= chat.users.where.not(username: current_user.username).map {|user| user.username}.join(", ") %>
