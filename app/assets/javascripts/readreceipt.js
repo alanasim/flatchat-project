@@ -19,12 +19,6 @@ $(document).on('ready', function(){
 
   })
 
-  // $('div#messages').on('change', function(){
-  //   // add in mark as seen and hidemessage logic
-
-  //   markAsSeen(this);
-  //   hideMessage(this);
-  // })
 
   // mark as seen after page focus -- WORKING
   $(window).on('focus', function(){
@@ -34,6 +28,13 @@ $(document).on('ready', function(){
       hideMessage(this);
       }
     )
+
+    // $('div#messages').on('change', function(){
+    // // add in mark as seen and hidemessage logic
+    //   markAsSeen(this);
+    //   hideMessage(this);
+    // })
+
   })
 
   // mark as seen on page load
