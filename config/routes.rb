@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
 
   resources :chats, only: [:index, :show, :new, :create]
+  post '/chats/validate_username', to: 'chats#validate_username'
+  post '/chats/validate_phonenumber', to: 'chats#validate_phonenumber'
 
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'

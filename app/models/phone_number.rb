@@ -23,6 +23,7 @@ class PhoneNumber < ApplicationRecord
     update(verified: true) if self.pin == entered_pin
   end
 
+
 end
 
 # test.messages.create(to: '2153845679',from: '2038262966',body: "Your PIN is 1234")
