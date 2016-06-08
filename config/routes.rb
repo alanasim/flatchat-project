@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
 
   resources :chats, only: [:index, :show, :new, :create]
+  post '/chats/validate_username', to: 'chats#validate_username'
+  post '/chats/validate_phonenumber', to: 'chats#validate_phonenumber'
 
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   post 'logout', to: 'sessions#destroy'
+
+  resources :message_views, only: [:create]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
