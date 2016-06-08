@@ -22,6 +22,7 @@ $(document).on('ready', function(){
   $(window).on('focus', function(){
     // Find all elements on page, filter out the ones seen
     $('[data-seen=false]').filter(shouldBeMarkedAsSeen).each(function(){
+      debugger
       markAsSeen(this);
       hideMessage(this);
       }
