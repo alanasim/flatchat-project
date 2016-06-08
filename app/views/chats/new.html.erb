@@ -20,23 +20,3 @@
   </div>
   <%= f.submit "Initiate Chat" %>
 <% end %>
-
-<script>
-  $(document).ready(function() {
-    var currentField
-    $('input').focus(function() {
-      currentField = $(':focus')
-      var prevField = ''
-    })
-    $('input').blur(function() {
-      prevField = currentField
-    })
-    $('[id*='+'username'+']').blur(function() {
-      $.ajax ({
-        url: '/chats/validate_username',
-        method: 'post',
-        data: {value: prevField.val(), id: prevField.attr('id')}
-      })
-  })
-  })
-</script>

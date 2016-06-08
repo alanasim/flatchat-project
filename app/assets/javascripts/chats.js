@@ -1,13 +1,60 @@
 var counter = 1
+var currentField
 
 function myFunction(i) {
   if ($('select#select-' + i).val() == "username") {
     $('select#select-' + i).siblings().replaceWith('<div class="input"><label for="chat_users_attributes_' + i + '_username">Username</label>\
-          <input type="text" name="chat[users_attributes][' + i + '][username]" id="chat_users_attributes_' + i + '_username" /></div>')
+          <input type="text" name="chat[users_attributes][' + i + '][username]" id="chat_users_attributes_' + i + '_username" /><div id="validation" style="display:inline"></div></div>')
   } else {
     $('select#select-' + i).siblings().replaceWith('<div class="input"><label for="chat_users_attributes_' + i + '_phone_number">Phone number</label>\
-          <input type="text" name="chat[users_attributes][' + i + '][phone_number]" id="chat_users_attributes_' + i + '_phone_number" /></div>')
+          <input type="text" name="chat[users_attributes][' + i + '][phone_number]" id="chat_users_attributes_' + i + '_phone_number" /><div id="validation" style="display:inline"></div></div>')
   };
+  validateUsername()
+  validatePhoneNumber()
+}
+
+function setCurrentField() {
+  $('input').focus(function() {
+      currentField = $(':focus')
+      var prevField = ''
+    })
+}
+
+function setPrevField() {
+  $('input').blur(function() {
+      prevField = currentField
+      alert(prevField.attr('id'))
+    })
+}
+
+// function validateUsername() {
+//   $('[id*='+'username'+']').blur(function() {
+//       $.ajax ({
+//         url: '/chats/validate_username',
+//         method: 'post',
+//         data: {value: prevField.val(), id: prevField.attr('id')}
+//       })
+//     })
+// }
+
+function validateUsername() {
+  $('[id*='+'username'+']').keyup(function() {
+    $.ajax ({
+        url: '/chats/validate_username',
+        method: 'post',
+        data: {value: $(this).val(), id: $(this).attr('id')}
+      })
+  })
+}
+
+function validatePhoneNumber() {
+  $('[id*='+'phone_number'+']').keyup(function() {
+    $.ajax ({
+      url: '/chats/validate_phonenumber',
+      method: 'post',
+      data: {value: $(':focus').val(), id: $(':focus').attr('id')}
+    })
+  })
 }
 
 $(document).ready(function() {
@@ -27,5 +74,10 @@ $(document).ready(function() {
           </div>\
         </div>');
     counter += 1
+    validateUsername()
+    validatePhoneNumber()
   })
+
+  validateUsername()
+  validatePhoneNumber()
 })
