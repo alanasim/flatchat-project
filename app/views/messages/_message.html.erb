@@ -1,1 +1,1 @@
-<li><b><%= message.user == current_user ? "you" : message.user.username %>: </b><%= message.content %></li>
+<li id="msg-<%= message.id %>"><b><%= message.user == current_user ? "you" : message.user.username %>: </b><%= message.content %></li>
