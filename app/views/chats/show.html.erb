@@ -10,6 +10,9 @@
     </div>
   <%end%>
 </div>
-
   <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
+</div>
+
+<div style="margin-top:10px;">
+  <%= link_to "Back to chats", chats_path, class: 'btn btn-primary' %>
 </div>
