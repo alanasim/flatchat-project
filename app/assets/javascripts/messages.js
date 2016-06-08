@@ -5,9 +5,6 @@ $(document).on('ready',function(){
       $(this).val('')
     }
   });
-  $('[id*='+'msg'+']').on('load', function() {
-    alert("test")
-  })
 })
 
 

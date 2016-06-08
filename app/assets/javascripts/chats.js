@@ -11,6 +11,7 @@ function myFunction(i) {
   };
   validateUsername()
   validatePhoneNumber()
+  disableSubmit()
 }
 
 function setCurrentField() {
@@ -47,6 +48,20 @@ function validateUsername() {
   })
 }
 
+function disableSubmit() {
+  $('input#start-chat').prop('disabled', true);
+  $('input[type="text"]').keyup(function() {
+    if($('div#validation').text().includes("Invalid") == false) {
+       $('input#start-chat').prop('disabled', false);
+    }
+  });
+}
+function enableSubmit() {
+  if($('div#validation').text().includes("Invalid") == false) {
+       $('input#start-chat').prop('disabled', false);
+    }
+}
+
 function validatePhoneNumber() {
   $('[id*='+'phone_number'+']').keyup(function() {
     $.ajax ({
@@ -76,8 +91,10 @@ $(document).ready(function() {
     counter += 1
     validateUsername()
     validatePhoneNumber()
+    disableSubmit()
   })
 
   validateUsername()
   validatePhoneNumber()
+  disableSubmit()
 })
