@@ -15,7 +15,7 @@ $(document).on('ready', function(){
           markAsSeen(this);
           hideMessage(this);
       })
-    }, 100);
+    }, 1000);
 
   })
 
