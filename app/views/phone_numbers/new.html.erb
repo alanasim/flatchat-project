@@ -6,6 +6,10 @@
   </div>
   <%= f.submit "Send PIN", class: "btn btn-primary", id: 'send-pin-link' %>
 <% end %>
+<br>
+<div>
+  <%= link_to "No Thanks", chats_path, class: 'btn btn-primary' %>
+</div>
 
 <div id="verify-pin">
 <h3>Enter your PIN</h3>
