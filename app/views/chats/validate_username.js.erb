@@ -1,5 +1,7 @@
 <% if @validation == true %>
   $('input#<%= @id %>').siblings(':last').replaceWith('<div id="validation" style="color:green;display:inline">&#10003</div>')
+  enableSubmit()
 <% else %>
   $('input#<%= @id %>').siblings(':last').replaceWith('<div id="validation" style="color:red;display:inline">Invalid username</div>')
+  disableSubmit()
 <% end %>
