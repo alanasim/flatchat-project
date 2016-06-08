@@ -1,0 +1,11 @@
+<% if @phone_number.verified %>
+  $('#verify-pin').hide()
+  $('#status-box').removeClass()
+  $('#status-box').addClass('alert alert-success')
+  $('#status-message').html('Success!!<br><a href="/chats" class="btn btn-primary">Go to Chats</a>')
+<% else %>
+  $('#status-box').removeClass()
+  $('#status-box').addClass('alert alert-warning')
+  $('#status-message').text("Sorry, that wasn't the right pin.")
+<% end %>
+$('#status-box').fadeToggle()

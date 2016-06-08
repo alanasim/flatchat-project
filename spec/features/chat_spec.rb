@@ -8,7 +8,6 @@ RSpec.describe "Chat" do
   let(:chat2) {Chat.create}
   
   
-  
   describe "Chat index" do
     before(:each) do
       sign_in(alana)
@@ -31,8 +30,24 @@ RSpec.describe "Chat" do
 
     it "does not list chats that the user is not a part of" do
       visit "/"
-      expect(page).to have_no_content("jacob")
+      expect(page).not_to have_content("jacob")
     end
 
   end
+
+  describe "Chat new" do
+    before(:each) do
+      sign_in(alana)
+    end
+
+    it "allows a user to create a new chat by typing a valid username" do
+      visit "/chats/new"
+      select 'Username', from: 'select-0'
+      fill_in('chat_users_attributes_0_username', :with => 'jacob')
+      click_on('Initiate Chat')
+      expect(alana.chats && jacob.chats).to include(Chat.last)
+    end
+
+  end
+
 end
