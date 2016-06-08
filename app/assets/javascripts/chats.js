@@ -49,16 +49,16 @@ function validateUsername() {
 }
 
 function disableSubmit() {
-  $('input[type="submit"]').prop('disabled', true);
+  $('input#start-chat').prop('disabled', true);
   $('input[type="text"]').keyup(function() {
     if($('div#validation').text().includes("Invalid") == false) {
-       $('input[type="submit"]').prop('disabled', false);
+       $('input#start-chat').prop('disabled', false);
     }
   });
 }
 function enableSubmit() {
   if($('div#validation').text().includes("Invalid") == false) {
-       $('input[type="submit"]').prop('disabled', false);
+       $('input#start-chat').prop('disabled', false);
     }
 }
 

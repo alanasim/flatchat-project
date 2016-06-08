@@ -1,1 +1,3 @@
 <li id="msg-<%= message.id %>" data-seen="false"><b><%= message.user == current_user ? "you" : message.user.username %>: </b><%= message.content %></li>
+
+<!-- ERB for data-seen=true/false -->
