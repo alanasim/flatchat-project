@@ -5,4 +5,20 @@ $(document).on('ready',function(){
       $(this).val('')
     }
   });
+  $('[id*='+'msg'+']').on('load', function() {
+    alert("test")
+  })
 })
+
+
+function createMessageView() {
+    alert("test");
+  // $.ajax({
+  //   url: '/message_views',
+  //   method: 'post',
+  //   data: {
+  //     message_id: $(this).attr('id')
+  //   }
+  // })
+}
+

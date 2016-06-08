@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :chats, through: :user_chats
   has_many :messages
   has_one :phone_number
+  has_many :message_views
 
   has_secure_password
 
