@@ -5,7 +5,8 @@ class MessagesController < ApplicationController
     if message.save
       ActionCable.server.broadcast 'messages',
         message: message.content,
-        user: message.user.username
+        user: message.user.username,
+        id: message.id
       head :ok
     end
   end

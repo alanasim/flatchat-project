@@ -1,7 +1,7 @@
 
 $(document).on('ready', function(){
 
-  // mark as seen on page load
+  // mark as seen on page load -- WORKING
   $('[data-seen=false]').filter(shouldBeMarkedAsSeen).each(function(){
     markAsSeen(this);
     hideMessage(this);
@@ -10,19 +10,20 @@ $(document).on('ready', function(){
   // mark as seen after message submit
   $('form#new_message').on('submit', function(){
     // add in mark as seen and hidemessage logic
+    debugger
   })
 
   $('div#messages').on('change', function(){
     // add in mark as seen and hidemessage logic
-    debugger
+
     markAsSeen(this);
     hideMessage(this);
   })
 
+  // mark as seen after page focus -- WORKING
   $(window).on('focus', function(){
     // Find all elements on page, filter out the ones seen
     $('[data-seen=false]').filter(shouldBeMarkedAsSeen).each(function(){
-      debugger
       markAsSeen(this);
       hideMessage(this);
       }
