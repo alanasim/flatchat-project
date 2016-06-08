@@ -1,5 +1,5 @@
 <% if @validation == true %>
   $('input#<%= @id %>').siblings(':last').replaceWith('<div id="validation" style="color:green;display:inline">&#10003</div>')
 <% else %>
-  $('div#validation').html('<span style="color:red">Invalid username</span>')
+  $('input#<%= @id %>').siblings(':last').replaceWith('<div id="validation" style="color:red;display:inline">Invalid username</div>')
 <% end %>
