@@ -10,15 +10,21 @@ $(document).on('ready', function(){
   // mark as seen after message submit
   $('form#new_message').on('submit', function(){
     // add in mark as seen and hidemessage logic
-    debugger
+    setTimeout(function() {
+       $('[data-seen=false]').filter(shouldBeMarkedAsSeen).each(function(){
+          markAsSeen(this);
+          hideMessage(this);
+      })
+    }, 100);
+
   })
 
-  $('div#messages').on('change', function(){
-    // add in mark as seen and hidemessage logic
+  // $('div#messages').on('change', function(){
+  //   // add in mark as seen and hidemessage logic
 
-    markAsSeen(this);
-    hideMessage(this);
-  })
+  //   markAsSeen(this);
+  //   hideMessage(this);
+  // })
 
   // mark as seen after page focus -- WORKING
   $(window).on('focus', function(){
