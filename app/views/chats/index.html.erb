@@ -1,8 +1,17 @@
-<h1>Chats page</h1>
-<h2>Hello <%= current_user.username %></h2>
-<div>
-  <%= link_to "Start a chat", new_chat_path, class: 'btn btn-primary' %>
+<div class="col-md-4 side-nav">
+  <h1 class="logo">LISTNR</h1>
+  <div class="nav-buttons">
+    <div class="nav-button">
+      <%= link_to "Start a chat", new_chat_path, class: 'btn btn-primary nav-button' %>
+    </div>
+    <div class="nav-button">
+      <%= link_to "Log out", logout_path, method: "destroy", class: 'btn btn-primary nav-button' %>
+    </div>
+  </div>
 </div>
+<div class="col-md-8 main">
+<h1 class="header">Chats</h1>
+<h2>Hello <%= current_user.username %></h2>
 <% current_user.chats.each do |chat| %>
 <%= link_to chat_path(chat)  do %>
   <%= chat.users.where.not(username: current_user.username).map {|user| user.username}.join(", ") %>
@@ -12,4 +21,6 @@
 <% end %>
 <br> <br>
 
-<%= link_to "Log out", logout_path, method: "destroy" %>
+
+
+</div>

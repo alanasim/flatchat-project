@@ -1,3 +1,16 @@
+<div class="col-md-4 side-nav">
+  <h1 class="logo">LISTNR</h1>
+  <div class="nav-buttons">
+    <div class="nav-button">
+      <%= link_to "Start a chat", new_chat_path, class: 'btn btn-primary nav-button' %>
+    </div>
+    <div class="nav-button">
+      <%= link_to "Log out", logout_path, method: "destroy", class: 'btn btn-primary nav-button' %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8 main">
 <h2>Start Chat</h2>
 
 <%= form_for @chat do |f| %>
@@ -20,3 +33,5 @@
   </div>
   <%= f.submit "Start Chat", id: "start-chat" %>
 <% end %>
+
+</div>

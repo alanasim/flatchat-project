@@ -12,8 +12,60 @@
  *
  *= require_tree .
  *= require_self
+*= require bootstrap-theme.min.css
+*= require bootstrap.css
  */
+
+body {
+  margin:0;
+}
 
 div.input {
   display: inline;
+}
+
+.side-nav {
+  height:100vh;
+  background-color:black;
+  color:white;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding-top: 20px;
+  text-align:center;
+}
+
+.logo {
+  font-size: calc(1vh + 8vw);
+  font-weight:bold;
+  letter-spacing:-.05em;
+  margin:0px;
+}
+
+.splash-logo {
+  font-size: calc(1vh + 6vh);
+}
+.btn, .btn-primary {
+  color:black;
+  background-color:white;
+}
+.btn {
+  color:black;
+  background-color:white;
+  border-radius: 8px;
+  font-size:24px;
+}
+
+.nav-button {
+  width: 98%;
+  margin: 15px 0;
+}
+
+.main {
+  border: 3px solid black;
+  margin: 5px;
+  background-color:white;
+}
+
+.header {
+  padding-bottom: 5px;
+  border-bottom: 3px solid black;
 }
